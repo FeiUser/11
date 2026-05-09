@@ -1,0 +1,51 @@
+server:
+  port: 8088
+#spring:
+#  datasource:
+#    ds1:
+#      driver-class-name: com.mysql.cj.jdbc.Driver
+#      jdbc-url: jdbc:mysql://127.0.0.1:3306/test?characterEncoding=utf-8&serverTimezone=UTC&useSSL=false
+#      username: root
+#      password: zkhz123
+#    ds2:
+#      driver-class-name: com.mysql.cj.jdbc.Driver
+#      jdbc-url: jdbc:mysql://127.0.0.1:3306/test?characterEncoding=utf-8&serverTimezone=UTC&useSSL=false
+#      username: root
+#      password: zkhz123
+
+lee:
+  datasource:
+    druid:
+      ds1:
+        name: ds1
+        url: jdbc:mysql://127.0.0.1:3306/test1?characterEncoding=utf-8&serverTimezone=UTC&useSSL=false
+        username: root
+        password: zkhz123
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        initialSize: 5
+        minIdle: 5
+        maxActive: 20
+        maxWait: 60000
+    ds2:
+      max-lifetime: 1600000
+      keep-alive-time: 90000
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      jdbc-url: jdbc:mysql://127.0.0.1:3306/test2?characterEncoding=utf-8&serverTimezone=UTC&useSSL=false
+      username: root
+      password: zkhz123
+      pool-name: testpool-2
+
+
+#spring:
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://localhost:3306/test1?characterEncoding=utf-8&serverTimezone=UTC&useSSL=false
+#    username: root
+#    password: zkhz123
+#
+#mybatis:
+#  mapper-locations: classpath:mapper/*.xml
+#  #目的是为了省略resultType里的代码量
+#  type-aliases-package: org.test.mybatis.entity
+#  configuration:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
