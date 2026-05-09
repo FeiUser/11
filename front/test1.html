@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+</head>
+<style>
+    .button {
+        height: 50px;
+        background-color: skyblue;
+        text-align: center;
+        /* 去掉span间间隙 */
+        font-size: 0px;
+        /* 元素水平居中 */
+        line-height: 50px;
+    }
+    .button span {
+        /* 行内块元素 */
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        background-color: #fff;
+        /* 上下 0  左右 2px */
+        margin: 0px 2px;
+        /* 垂直居中 */
+        vertical-align: middle;
+        /* 圆角 */
+        border-radius: 50%;
+    }
+    .button .current {
+        background-color: tomato;
+    }
+</style>
+<body>
+<div class="button">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span class="current"></span>
+</div>
+</body>
+</html>

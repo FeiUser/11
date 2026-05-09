@@ -1,0 +1,297 @@
+<mapper namespace="com.jta.entity.ng.tyy.dao.NPersonDao">
+    <!--    <select id="zidingyi" resultType="java.util.Map">-->
+
+
+    <!--    <select id="findPlayerByAge" resultType="com.jta.entity.ng.tyy.pojo.tag.NPerson">-->
+    <!--&lt;!&ndash;        match (v:player) where v.player.age == $age return v;&ndash;&gt;-->
+    <!--    </select>-->
+
+    <!--    <select id="findPlayerByName" resultType="com.jta.entity.ng.tyy.pojo.tag.NPerson">-->
+    <!--&lt;!&ndash;        match (v:player) where v.player.name == $name return v;&ndash;&gt;-->
+    <!--    </select>-->
+
+    <insert id="insertNameEdgeOne2More">
+        @for ( id in nPersonIdList ) {
+        INSERT EDGE fullName(value) VALUES ${id0} -> ${id}:("${n.value}");
+        @}
+    </insert>
+
+    <insert id="insertEnglishNameEdgeOne2More">
+        @for ( id in nPersonIdList ) {
+        INSERT EDGE englishName(value) VALUES ${id0} -> ${id}:("${n.value}");
+        @}
+    </insert>
+
+    <insert id="insertFacebookEdgeOne2More">
+        @for ( id in nPersonIdList ) {
+        INSERT EDGE facebook(value) VALUES ${id0} -> ${id}:("${n.value}");
+        @}
+    </insert>
+
+    <insert id="insertMobilePhoneEdgeOne2More">
+        @for ( id in nPersonIdList ) {
+        INSERT EDGE mobilePhone(value) VALUES ${id0} -> ${id}:("${n.value}");
+        @}
+    </insert>
+
+    <insert id="insertEmailEdgeOne2More">
+        @for ( id in nPersonIdList ) {
+        INSERT EDGE email(value) VALUES ${id0} -> ${id}:("${n.value}");
+        @}
+    </insert>
+
+    <insert id="insertJobCompanyEdgeOne2More">
+        @for ( id in nPersonIdList ) {
+        INSERT EDGE jobCompany(value) VALUES ${id0} -> ${id}:("${n.value}");
+        @}
+    </insert>
+
+    <insert id="insertTwitterUrlEdgeOne2More">
+        @for ( id in nPersonIdList ) {
+        INSERT EDGE twitterUrl(value) VALUES ${id0} -> ${id}:("${n.value}");
+        @}
+    </insert>
+
+
+    <!--    id-->
+    <insert id="insertIndustryEdgeOne2More">
+        @for ( id in nPersonIdList ) {
+        INSERT EDGE industryId(value) VALUES ${id0} -> ${id}:("${n.value}");
+        @}
+    </insert>
+
+    <insert id="insertFullNameIdE">
+        @for ( id in nPersonIdList ) {
+        INSERT EDGE fullNameId(value) VALUES ${id0} -> ${id}:("${n.value}");
+        @}
+    </insert>
+
+    <insert id="insertEnglishNameIdE">
+        @for ( id in nPersonIdList ) {
+        INSERT EDGE englishNameId(value) VALUES ${id0} -> ${id}:("${n.value}");
+        @}
+    </insert>
+
+    <insert id="insertIdNumberIdE">
+        @for ( id in nPersonIdList ) {
+        INSERT EDGE idNumberId(value) VALUES ${id0} -> ${id}:("${n.value}");
+        @}
+    </insert>
+
+    <insert id="insertMobilePhoneIdE">
+        @for ( id in nPersonIdList ) {
+        INSERT EDGE mobilePhoneId(value, mainland) VALUES ${id0} -> ${id}:("${n.value}", ${n.mainland});
+        @}
+    </insert>
+
+    <insert id="insertEmailIdE">
+        @for ( id in nPersonIdList ) {
+        INSERT EDGE emailId(value) VALUES ${id0} -> ${id}:("${n.value}");
+        @}
+    </insert>
+
+    <insert id="insertJobCompanyIdE">
+        @for ( id in nPersonIdList ) {
+        INSERT EDGE jobCompanyId(value) VALUES ${id0} -> ${id}:("${n.value}");
+        @}
+    </insert>
+
+    <insert id="insertFacebookIdE">
+        @for ( id in nPersonIdList ) {
+        INSERT EDGE facebookId(value) VALUES ${id0} -> ${id}:("${n.value}");
+        @}
+    </insert>
+
+    <insert id="insertTwitterUrlIdE">
+        @for ( id in nPersonIdList ) {
+        INSERT EDGE twitterUrlId(value) VALUES ${id0} -> ${id}:("${n.value}");
+        @}
+    </insert>
+
+
+
+    <select id="findById" resultType="com.jta.entity.ng.tyy.pojo.tag.NPerson">
+        MATCH (v:person) WHERE id(v)==${id0} return v;
+    </select>
+
+    <select id="findIdsByIndustryEPage" resultType="com.vesoft.nebula.client.graph.data.ResultSet">
+        LOOKUP ON industryId YIELD  industryId._src as v | limit ${from}, ${pageSize};
+    </select>
+
+    <select id="findIdsByFullNameEPage" resultType="com.vesoft.nebula.client.graph.data.ResultSet">
+        LOOKUP ON fullNameId YIELD  fullNameId._src as v | limit ${from}, ${pageSize};
+    </select>
+
+    <select id="findIdsByEnglishNameEPage" resultType="com.vesoft.nebula.client.graph.data.ResultSet">
+        LOOKUP ON englishNameId YIELD  englishNameId._src as v | limit ${from}, ${pageSize};
+    </select>
+
+    <select id="findIdsByIdNumberIdEPage" resultType="com.vesoft.nebula.client.graph.data.ResultSet">
+        LOOKUP ON idNumberId YIELD  idNumberId._src as v | limit ${from}, ${pageSize};
+    </select>
+
+    <select id="findIdsByFacebookIdEPage" resultType="com.vesoft.nebula.client.graph.data.ResultSet">
+        LOOKUP ON facebookId YIELD  facebookId._src as v | limit ${from}, ${pageSize};
+    </select>
+
+    <select id="findIdsByEmailIdEPage" resultType="com.vesoft.nebula.client.graph.data.ResultSet">
+        LOOKUP ON emailId YIELD  emailId._src as v | limit ${from}, ${pageSize};
+    </select>
+
+    <select id="findIdsByJobCompanyIdEPage" resultType="com.vesoft.nebula.client.graph.data.ResultSet">
+        LOOKUP ON jobCompanyId YIELD  jobCompanyId._src as v | limit ${from}, ${pageSize};
+    </select>
+
+    <select id="findIdsByTwitterUrlIdEPage" resultType="com.vesoft.nebula.client.graph.data.ResultSet">
+        LOOKUP ON twitterUrlId YIELD  twitterUrlId._src as v | limit ${from}, ${pageSize};
+    </select>
+
+    <select id="findIdsByMobilePhoneIdEPage" resultType="com.vesoft.nebula.client.graph.data.ResultSet">
+        LOOKUP ON mobilePhoneId YIELD  mobilePhoneId._src as v | limit ${from}, ${pageSize};
+    </select>
+
+    <select id="findIdsByEmailIdEPage" resultType="com.vesoft.nebula.client.graph.data.ResultSet">
+        LOOKUP ON emailId YIELD  emailId._src as v | limit ${from}, ${pageSize};
+    </select>
+
+    <select id="findIdsByJobCompanyIdEPage" resultType="com.vesoft.nebula.client.graph.data.ResultSet">
+        LOOKUP ON jobCompanyId YIELD  jobCompanyId._src as v | limit ${from}, ${pageSize};
+    </select>
+
+
+
+    <select id="findPersonPage" resultType="com.jta.entity.ng.tyy.pojo.tag.NPerson">
+        LOOKUP ON person YIELD vertex as v | limit ${from}, ${pageSize};
+    </select>
+
+    <!--    LOOKUP ON person where person.industry=="學生" YIELD vertex as v | limit 0, 4-->
+    <select id="findPersonByFullNamePage" resultType="com.jta.entity.ng.tyy.pojo.tag.NPerson">
+        <!--        match (v:person{fullName:"${fullName}"}) return v skip ${from} limit ${pageSize};-->
+        LOOKUP ON person where person.fullName=="${fullName}" YIELD vertex as v | limit ${from}, ${pageSize};
+    </select>
+
+    <select id="findPersonByEnglishNamePage" resultType="com.jta.entity.ng.tyy.pojo.tag.NPerson">
+        <!--        match (v:person{englishName:"${englishName}"}) return v skip ${from} limit ${pageSize};-->
+        LOOKUP ON person where person.englishName=="${englishName}" YIELD vertex as v | limit ${from}, ${pageSize};
+    </select>
+
+    <select id="findPersonByIndustryPage" resultType="com.jta.entity.ng.tyy.pojo.tag.NPerson">
+        <!--        match (v:person{industry:"${industry}"}) return v skip ${from} limit ${pageSize};-->
+        LOOKUP ON person where person.industry=="${industry}" YIELD vertex as v | limit ${from}, ${pageSize};
+    </select>
+
+    <select id="findPersonByIdNumberPage" resultType="com.jta.entity.ng.tyy.pojo.tag.NPerson">
+        <!--        match (v:person{idNumber:"${idNumber}"}) return v skip ${from} limit ${pageSize};-->
+        LOOKUP ON person where person.idNumber=="${idNumber}" YIELD vertex as v | limit ${from}, ${pageSize};
+    </select>
+
+    <select id="findPersonByFacebookIdPage" resultType="com.jta.entity.ng.tyy.pojo.tag.NPerson">
+        <!--        match (v:person{facebookId:"${facebookId}"}) return v skip ${from} limit ${pageSize};-->
+        LOOKUP ON person where person.facebookId=="${facebookId}" YIELD vertex as v | limit ${from}, ${pageSize};
+    </select>
+
+    <select id="findPersonByTwitterUrlPage" resultType="com.jta.entity.ng.tyy.pojo.tag.NPerson">
+        <!--        match (v:person{ttUserUrl:"${twitterUrl}"}) return v skip ${from} limit ${pageSize};-->
+        LOOKUP ON person where person.ttUserUrl=="${twitterUrl}" YIELD vertex as v | limit ${from}, ${pageSize};
+    </select>
+
+    <select id="findPersonByMobilePhonePage" resultType="com.jta.entity.ng.tyy.pojo.tag.NPerson">
+        <!--        match (v:person{mobilePhone:"${mobilePhone}"}) return v skip ${from} limit ${pageSize};-->
+        LOOKUP ON person where person.mobilePhone=="${mobilePhone}" YIELD vertex as v | limit ${from}, ${pageSize};
+    </select>
+
+    <select id="findPersonByEmailPage" resultType="com.jta.entity.ng.tyy.pojo.tag.NPerson">
+        <!--        match (v:person{email:"${email}"}) return v skip ${from} limit ${pageSize};-->
+        LOOKUP ON person where person.email=="${email}" YIELD vertex as v | limit ${from}, ${pageSize};
+    </select>
+
+    <select id="findPersonByJobCompanyPage" resultType="com.jta.entity.ng.tyy.pojo.tag.NPerson">
+        <!--        match (v:person{jobCompanyName:"${jobCompany}"}) return v skip ${from} limit ${pageSize};-->
+        LOOKUP ON person where person.jobCompanyName=="${jobCompany}" YIELD vertex as v | limit ${from}, ${pageSize};
+    </select>
+
+
+
+
+
+    <select id="findPersonByFullNameLimitN" resultType="com.jta.entity.ng.tyy.pojo.tag.NPerson">
+        <!--        match (v:person{fullName:"${fullName}"}) return v limit ${n};-->
+        LOOKUP ON person where person.fullName=="${fullName}" YIELD vertex as v | limit ${n};
+    </select>
+
+    <select id="findPersonByEnglishNameLimitN" resultType="com.jta.entity.ng.tyy.pojo.tag.NPerson">
+        <!--        match (v:person{englishName:"${englishName}"}) return v limit ${n};-->
+        LOOKUP ON person where person.englishName=="${englishName}" YIELD vertex as v | limit ${n};
+    </select>
+
+    <select id="findPersonByIndustryLimitN" resultType="com.jta.entity.ng.tyy.pojo.tag.NPerson">
+        <!--        match (v:person{industry:"${industry}"}) return v limit ${n};-->
+        LOOKUP ON person where person.industry=="${industry}" YIELD vertex as v | limit ${n};
+    </select>
+
+    <select id="findPersonByIdNumberLimitN" resultType="com.jta.entity.ng.tyy.pojo.tag.NPerson">
+        <!--        match (v:person{idNumber:"${idNumber}"}) return v limit ${n};-->
+        LOOKUP ON person where person.idNumber=="${idNumber}" YIELD vertex as v | limit ${n};
+    </select>
+
+    <select id="findPersonByFacebookIdLimitN" resultType="com.jta.entity.ng.tyy.pojo.tag.NPerson">
+        <!--        match (v:person{facebookId:"${facebookId}"}) return v limit ${n};-->
+        LOOKUP ON person where person.facebookId=="${facebookId}" YIELD vertex as v | limit ${n};
+    </select>
+
+    <select id="findPersonByMobilePhoneLimitN" resultType="com.jta.entity.ng.tyy.pojo.tag.NPerson">
+        <!--        match (v:person{mobilePhone:"${mobilePhone}"}) return v limit ${n};-->
+        LOOKUP ON person where person.mobilePhone=="${mobilePhone}" YIELD vertex as v | limit ${n};
+    </select>
+
+    <select id="findPersonByTwitterUrlLimitN" resultType="com.jta.entity.ng.tyy.pojo.tag.NPerson">
+        <!--        match (v:person{ttUserUrl:"${twitterUrl}"}) return v limit ${n};-->
+        LOOKUP ON person where person.ttUserUrl=="${twitterUrl}" YIELD vertex as v | limit ${n};
+    </select>
+
+    <select id="findPersonByEmailLimitN" resultType="com.jta.entity.ng.tyy.pojo.tag.NPerson">
+        <!--        match (v:person{email:"${email}"}) return v limit ${n};-->
+        LOOKUP ON person where person.email=="${email}" YIELD vertex as v | limit ${n};
+    </select>
+
+    <select id="findPersonByJobCompanyLimitN" resultType="com.jta.entity.ng.tyy.pojo.tag.NPerson">
+        <!--        match (v:person{jobCompanyName:"${jobCompany}"}) return v limit ${n};-->
+        LOOKUP ON person where person.jobCompanyName=="${jobCompany}" YIELD vertex as v | limit ${n};
+    </select>
+
+    <!--    <select id="findPersonByIndustryLimitN" resultType="com.jta.entity.ng.tyy.pojo.tag.NPerson">-->
+    <!--        match (v:person{industry:"${industry}"}) return v limit ${n};-->
+    <!--    </select>-->
+
+
+
+
+    <select id="findEdgePersonEnglishNamePerson" resultType="com.jta.entity.ng.tyy.pojo.result.PersonFullNamePerson">
+        MATCH (sourceTag)-[n:englishName]->(distTag) where id(sourceTag)== ${id0} RETURN sourceTag, n, distTag limit 10;
+    </select>
+
+    <select id="findEdgePersonFullNamePerson" resultType="com.jta.entity.ng.tyy.pojo.result.PersonFullNamePerson">
+        MATCH (sourceTag)-[n:fullName]->(distTag) where id(sourceTag)== ${id0} RETURN sourceTag, n, distTag limit 10;
+    </select>
+
+    <select id="getDestIdByFullName" resultType="java.lang.Integer">
+        MATCH ()-[r:fullName{value:"${id0}"}]-(v) with distinct v as v  RETURN id(v)
+    </select>
+
+    <select id="showStatus" resultType="com.vesoft.nebula.client.graph.data.ResultSet">
+        SHOW STATS;
+    </select>
+
+    <select id="createEdgeTest" resultType="com.vesoft.nebula.client.graph.data.ResultSet">
+        CREATE edge `${s1}`(`value` string);
+        CREATE EDGE INDEX IF NOT EXISTS `${s2}` on `test`(`value`(20));
+    </select>
+
+    <select id="createEdgeIndexTest" resultType="com.vesoft.nebula.client.graph.data.ResultSet">
+        CREATE EDGE INDEX IF NOT EXISTS `test_index` on `test`(`value`(20));
+    </select>
+
+    <select id="dropEdgeTest" resultType="com.vesoft.nebula.client.graph.data.ResultSet">
+        DROP edge INDEX `test`;
+    </select>
+</mapper>
