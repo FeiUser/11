@@ -1,0 +1,8 @@
+spring:
+  profiles:
+    active: db
+
+server:
+  port: 6666
+
+ipaddr: 2,3,4,127.0.0.1,
