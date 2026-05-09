@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Main-Class: 
+Class-Path: spring-beans-5.2.12.RELEASE.jar spring-core-5.2.12.RELEASE.j
+ ar spring-aop-5.2.12.RELEASE.jar lombok-1.18.24.jar spring-context-supp
+ ort-5.2.12.RELEASE.jar spring-expression-5.2.12.RELEASE.jar spring-cont
+ ext-5.2.12.RELEASE.jar spring-jcl-5.2.12.RELEASE.jar
+
