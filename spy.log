@@ -1,0 +1,8 @@
+1736913315253|23|statement|connection 0|url jdbc:p6spy:mysql://localhost:3306/test1?serverTimezone=Asia/Shanghai&characterEncoding=utf-8&useSSL=false|insert into user (sex, password, name) values (?, ?, ?)|insert into user (sex, password, name) values (NULL, '123', '123')
+1736913315286|22|commit|connection 0|url jdbc:p6spy:mysql://localhost:3306/test1?serverTimezone=Asia/Shanghai&characterEncoding=utf-8&useSSL=false||
+1736913382034|15|statement|connection 0|url jdbc:p6spy:mysql://localhost:3306/test1?serverTimezone=Asia/Shanghai&characterEncoding=utf-8&useSSL=false|insert into user (sex, password, name) values (?, ?, ?)|insert into user (sex, password, name) values (NULL, '123', '123')
+1736913382065|22|commit|connection 0|url jdbc:p6spy:mysql://localhost:3306/test1?serverTimezone=Asia/Shanghai&characterEncoding=utf-8&useSSL=false||
+1736913391956|13|statement|connection 0|url jdbc:p6spy:mysql://localhost:3306/test1?serverTimezone=Asia/Shanghai&characterEncoding=utf-8&useSSL=false|insert into user (sex, password, name) values (?, ?, ?)|insert into user (sex, password, name) values (NULL, '123', '123')
+1736913391990|32|commit|connection 0|url jdbc:p6spy:mysql://localhost:3306/test1?serverTimezone=Asia/Shanghai&characterEncoding=utf-8&useSSL=false||
+1736921041971|24|statement|connection 0|url jdbc:p6spy:mysql://localhost:3306/test1?serverTimezone=Asia/Shanghai&characterEncoding=utf-8&useSSL=false|insert into user (sex, password, name) values (?, ?, ?)|insert into user (sex, password, name) values (NULL, '123', '123')
+1736921042001|19|commit|connection 0|url jdbc:p6spy:mysql://localhost:3306/test1?serverTimezone=Asia/Shanghai&characterEncoding=utf-8&useSSL=false||
